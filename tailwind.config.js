@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['var(--font-space-grotesk)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-bricolage)', 'system-ui', 'sans-serif'],
       },
     },
   },

@@ -104,61 +104,42 @@ const steps = [
   { number: '03', title: 'Run from anywhere. Connect to GHL when ready.', description: 'Smintos works on its own from day one. Plug into GoHighLevel whenever you want to level up.' },
 ]
 
-/* ─── Hero App Preview ─── */
-function AppPreview() {
+/* ─── Hero Visual ─── */
+function HeroVisual() {
+  const metrics = [
+    { label: 'Jobs scheduled this week', value: '14', sub: '3 pending · 11 confirmed', dark: false },
+    { label: 'Revenue collected', value: '$6,840', sub: 'This month', dark: true },
+    { label: 'Estimates awaiting approval', value: '5', sub: 'Avg. response: 4 hrs', dark: false },
+  ]
+
   return (
-    <div className="relative w-full max-w-sm mx-auto lg:mx-0 select-none pointer-events-none">
-      {/* Job card */}
-      <div className="animate-float bg-white rounded-2xl border border-black/[0.07] p-5 shadow-[0_8px_40px_rgba(0,0,0,0.08)] mb-3">
-        <div className="flex items-center justify-between mb-4">
-          <span className="text-[10px] font-bold text-black/35 tracking-widest uppercase">Job #1042</span>
-          <span className="rounded-full text-[11px] font-bold px-3 py-1" style={{ background: `${MINT}22`, color: '#00a85f' }}>Scheduled</span>
-        </div>
-        <p className="text-base font-semibold text-[#0d0d0d] mb-1">Window Tint — Tesla Model 3</p>
-        <p className="text-sm text-black/40">Marcus B. · Tomorrow 9:00 am</p>
-        <div className="mt-4 h-px bg-black/[0.06]" />
-        <div className="flex items-center justify-between mt-3">
-          <span className="text-sm text-black/40">Assigned to</span>
-          <div className="flex items-center gap-2">
-            <div className="w-5 h-5 rounded-full bg-[#0d0d0d] flex items-center justify-center text-white text-[9px] font-bold">JD</div>
-            <span className="text-sm font-medium text-[#0d0d0d]">You</span>
+    <div className="relative w-full max-w-sm mx-auto lg:mx-0 select-none pointer-events-none space-y-3">
+      {metrics.map((m, i) => (
+        <div
+          key={i}
+          className={`rounded-2xl border p-6 shadow-[0_8px_40px_rgba(0,0,0,0.07)] ${
+            i === 1 ? 'ml-8 animate-float-delay' : 'animate-float'
+          } ${m.dark ? 'bg-[#0d0d0d] border-white/[0.07]' : 'bg-white border-black/[0.07]'}`}
+        >
+          <p className={`text-[10px] font-bold tracking-widest uppercase mb-3 ${m.dark ? 'text-white/35' : 'text-black/35'}`}>
+            {m.label}
+          </p>
+          <div className="flex items-end justify-between gap-4">
+            <p className={`text-3xl font-bold leading-none ${m.dark ? 'text-white' : 'text-[#0d0d0d]'}`}
+               style={i === 1 ? { color: MINT } : {}}>
+              {m.value}
+            </p>
+            <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+                 style={{ background: `${MINT}${m.dark ? 'ff' : '22'}` }}>
+              <svg className="w-4 h-4" style={{ color: m.dark ? '#000' : MINT }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+              </svg>
+            </div>
           </div>
+          <p className={`text-xs mt-2 ${m.dark ? 'text-white/35' : 'text-black/35'}`}>{m.sub}</p>
         </div>
-      </div>
-
-      {/* Payment card — offset right */}
-      <div className="animate-float-delay bg-white rounded-2xl border border-black/[0.07] p-5 shadow-[0_8px_40px_rgba(0,0,0,0.08)] ml-8 mb-3">
-        <p className="text-[10px] font-bold text-black/35 tracking-widest uppercase mb-3">Payment Received</p>
-        <div className="flex items-end justify-between">
-          <div>
-            <p className="text-2xl font-bold text-[#0d0d0d]">$1,240</p>
-            <p className="text-sm text-black/40 mt-0.5">Epoxy Floor — Johnson</p>
-          </div>
-          <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: MINT }}>
-            <svg className="w-5 h-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      {/* Estimate card */}
-      <div className="animate-float bg-[#0d0d0d] rounded-2xl p-5 shadow-[0_8px_40px_rgba(0,0,0,0.15)]">
-        <p className="text-[10px] font-bold tracking-widest uppercase mb-3" style={{ color: `${MINT}99` }}>Estimate Sent</p>
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-base font-semibold text-white">Sarah M.</p>
-            <p className="text-sm text-white/40 mt-0.5">Pressure Wash · 2 houses</p>
-          </div>
-          <p className="text-xl font-bold text-white">$380</p>
-        </div>
-        <div className="mt-4 rounded-lg py-2 px-3 text-center text-xs font-bold text-black" style={{ background: MINT }}>
-          Awaiting Approval
-        </div>
-      </div>
-
-      {/* Decorative dot */}
-      <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full opacity-20 blur-2xl" style={{ background: MINT }} />
+      ))}
+      <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full opacity-15 blur-3xl" style={{ background: MINT }} />
     </div>
   )
 }
@@ -224,7 +205,7 @@ export default function Home() {
                 Built for operators, not project managers
               </div>
 
-              <h1 className="text-[clamp(2.6rem,6vw,4.5rem)] font-bold leading-[1.05] tracking-tight text-[#0d0d0d] mb-6">
+              <h1 className="font-display text-[clamp(2.6rem,6vw,4.5rem)] font-bold leading-[1.05] tracking-tight text-[#0d0d0d] mb-6">
                 Stop Running<br />
                 Your Business<br />
                 From a{' '}
@@ -261,9 +242,9 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right — app preview */}
+            {/* Right — metrics visual */}
             <div className="hidden lg:block">
-              <AppPreview />
+              <HeroVisual />
             </div>
           </div>
         </div>
@@ -303,7 +284,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <div className="lg:sticky lg:top-28">
               <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ color: MINT }}>Sound Familiar?</p>
-              <h2 className="text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight mb-6">
+              <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight mb-6">
                 The pain is real.<br />We built<br />around it.
               </h2>
               <p className="text-[#0d0d0d]/50 leading-relaxed">
@@ -333,7 +314,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-14">
             <div>
               <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ color: MINT }}>Features</p>
-              <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
+              <h2 className="font-display text-4xl sm:text-5xl font-bold text-white leading-tight">
                 Everything you need.<br />Nothing you don&apos;t.
               </h2>
             </div>
@@ -361,7 +342,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14">
             <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ color: MINT }}>Pricing</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight">
+            <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight">
               Simple, flat pricing.
             </h2>
             <p className="text-[#0d0d0d]/45 mt-3">No contracts. No setup fees. Cancel anytime.</p>
@@ -422,7 +403,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <div className="lg:sticky lg:top-28">
               <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ color: MINT }}>How It Works</p>
-              <h2 className="text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight mb-6">
+              <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight mb-6">
                 Up and running<br />in minutes.
               </h2>
               <p className="text-[#0d0d0d]/50 leading-relaxed mb-8">
@@ -453,7 +434,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="rounded-3xl px-10 py-16 text-center" style={{ background: MINT }}>
             <p className="text-xs font-bold tracking-[0.2em] uppercase text-black/40 mb-4">Get Started Today</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-black leading-tight mb-4">
+            <h2 className="font-display text-4xl sm:text-5xl font-bold text-black leading-tight mb-4">
               Run a tighter operation.<br />Starting now.
             </h2>
             <p className="text-black/55 mb-10 max-w-md mx-auto">
