@@ -114,17 +114,17 @@ const problems = [
   {
     title: 'Admin work is eating your evenings',
     description:
-      "You're quoting jobs, chasing invoices, and texting status updates when you should be off the clock. The paperwork never stops.",
+      "You're quoting jobs, chasing invoices, and texting status updates when you should be off the clock.",
   },
   {
     title: 'Jobs and customers fall through the cracks',
     description:
-      "Without a system, you're running on memory, sticky notes, and text threads. Something always gets missed — and it costs you.",
+      "Without a system, you're running on memory and text threads. Something always gets missed — and it costs you.",
   },
   {
-    title: 'Your current software is too complex or too expensive',
+    title: 'Your software is too complex or too expensive',
     description:
-      "You don't need a $300/month enterprise platform with a 40-hour onboarding. You need something that works on day one.",
+      "You don't need a $300/month enterprise platform. You need something that works on day one.",
   },
 ]
 
@@ -151,19 +151,19 @@ const steps = [
     number: '01',
     title: 'Sign up and set up your account in minutes',
     description:
-      "No long onboarding. No call with a sales rep. Create your account, add your business details, and you're ready to run.",
+      "No long onboarding. No sales call. Create your account, add your business details, and you're ready to run.",
   },
   {
     number: '02',
     title: 'Add your jobs, customers, and team',
     description:
-      'Import existing customers or add them one by one. Create jobs, assign crew members, and get everyone aligned from day one.',
+      'Import existing customers or add them one by one. Create jobs, assign crew members, and get everyone aligned.',
   },
   {
     number: '03',
-    title: 'Run your field ops from anywhere — connect to GHL when ready',
+    title: 'Run your ops from anywhere — connect to GHL when ready',
     description:
-      'Use Smintos as your standalone field tool. When you want to level up, plug into GoHighLevel and connect your ops to your marketing and sales system.',
+      'Use Smintos standalone or plug into GoHighLevel to connect your field ops to your marketing and sales system.',
   },
 ]
 
@@ -172,50 +172,51 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-[#08090d] text-white font-sans antialiased">
+    <div className="min-h-screen bg-[#050507] text-white font-sans antialiased">
       <Head>
         <title>Smintos — Field Service Software for Home Service Operators</title>
         <meta
           name="description"
-          content="Simple field service software for window tinters, epoxy contractors, pressure washers, remodelers, and more. Schedule jobs, send estimates, collect payments, and manage customers from one place. Works standalone or connects to GoHighLevel."
+          content="Simple field service software for window tinters, epoxy contractors, pressure washers, remodelers, and more. Schedule jobs, send estimates, collect payments, and manage customers from one place."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
+      {/* ── Announcement bar ── */}
+      <div className="bg-[#22c55e] text-black text-xs font-semibold text-center py-2.5 px-4 tracking-wide">
+        Now in Early Access — Start your 7-day free trial today. No credit card required.
+      </div>
+
       {/* ── Nav ── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.06] bg-[#08090d]/90 backdrop-blur-md">
+      <nav className="sticky top-0 z-50 border-b border-white/[0.05] bg-[#050507]/95 backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-3 items-center h-16">
-            {/* Wordmark */}
-            <Link href="/" className="text-lg font-bold tracking-widest text-white">
-              SMINTOS
+            <Link href="/" className="text-base font-bold tracking-[0.2em] text-white uppercase">
+              Smintos
             </Link>
 
-            {/* Center nav links */}
             <div className="hidden md:flex items-center justify-center gap-8">
-              <a href="#features" className="text-sm text-slate-400 hover:text-white transition-colors duration-150">
+              <a href="#features" className="text-sm font-medium text-white/50 hover:text-white transition-colors duration-150">
                 Features
               </a>
-              <a href="#pricing" className="text-sm text-slate-400 hover:text-white transition-colors duration-150">
+              <a href="#pricing" className="text-sm font-medium text-white/50 hover:text-white transition-colors duration-150">
                 Pricing
               </a>
-              <a href="#how-it-works" className="text-sm text-slate-400 hover:text-white transition-colors duration-150">
+              <a href="#how-it-works" className="text-sm font-medium text-white/50 hover:text-white transition-colors duration-150">
                 How It Works
               </a>
             </div>
 
-            {/* Right: CTA + mobile toggle */}
             <div className="flex items-center justify-end gap-3">
               <a
                 href="#pricing"
-                className="hidden md:inline-flex items-center rounded-lg bg-green-500 hover:bg-green-400 transition-colors duration-150 px-4 py-2 text-sm font-semibold text-black"
+                className="hidden md:inline-flex items-center rounded-lg bg-[#22c55e] hover:bg-[#4ade80] transition-colors duration-150 px-4 py-2 text-sm font-semibold text-black"
               >
                 Start Free Trial
               </a>
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="md:hidden p-2 -mr-2 text-slate-400 hover:text-white transition-colors"
-                aria-label="Toggle menu"
+                className="md:hidden p-2 -mr-2 text-white/50 hover:text-white transition-colors"
               >
                 {menuOpen ? <IconClose /> : <IconMenu />}
               </button>
@@ -223,36 +224,13 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Mobile menu */}
         {menuOpen && (
-          <div className="md:hidden border-t border-white/[0.06] bg-[#08090d] px-5 py-4 space-y-1">
-            <a
-              href="#features"
-              onClick={() => setMenuOpen(false)}
-              className="block rounded-lg px-3 py-2.5 text-sm text-slate-400 hover:text-white hover:bg-white/[0.04] transition-colors"
-            >
-              Features
-            </a>
-            <a
-              href="#pricing"
-              onClick={() => setMenuOpen(false)}
-              className="block rounded-lg px-3 py-2.5 text-sm text-slate-400 hover:text-white hover:bg-white/[0.04] transition-colors"
-            >
-              Pricing
-            </a>
-            <a
-              href="#how-it-works"
-              onClick={() => setMenuOpen(false)}
-              className="block rounded-lg px-3 py-2.5 text-sm text-slate-400 hover:text-white hover:bg-white/[0.04] transition-colors"
-            >
-              How It Works
-            </a>
+          <div className="md:hidden border-t border-white/[0.05] bg-[#050507] px-5 py-4 space-y-1">
+            <a href="#features" onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2.5 text-sm font-medium text-white/60 hover:text-white hover:bg-white/[0.04] transition-colors">Features</a>
+            <a href="#pricing" onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2.5 text-sm font-medium text-white/60 hover:text-white hover:bg-white/[0.04] transition-colors">Pricing</a>
+            <a href="#how-it-works" onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2.5 text-sm font-medium text-white/60 hover:text-white hover:bg-white/[0.04] transition-colors">How It Works</a>
             <div className="pt-2">
-              <a
-                href="#pricing"
-                onClick={() => setMenuOpen(false)}
-                className="block rounded-lg bg-green-500 hover:bg-green-400 transition-colors px-4 py-3 text-sm font-semibold text-black text-center"
-              >
+              <a href="#pricing" onClick={() => setMenuOpen(false)} className="block rounded-lg bg-[#22c55e] hover:bg-[#4ade80] transition-colors px-4 py-3 text-sm font-semibold text-black text-center">
                 Start Free Trial
               </a>
             </div>
@@ -261,193 +239,156 @@ export default function Home() {
       </nav>
 
       {/* ── Hero ── */}
-      <section className="relative pt-36 pb-28 px-5 sm:px-8 overflow-hidden">
-        {/* Ambient glow */}
-        <div className="pointer-events-none absolute inset-0 flex items-start justify-center overflow-hidden">
-          <div className="mt-10 w-[900px] h-[600px] rounded-full bg-green-500/[0.05] blur-[120px]" />
+      <section className="relative px-5 sm:px-8 pt-24 pb-28 overflow-hidden">
+        {/* Glow */}
+        <div className="pointer-events-none absolute inset-0 flex justify-center overflow-hidden">
+          <div className="mt-0 w-[700px] h-[500px] rounded-full bg-[#22c55e]/[0.07] blur-[100px]" />
         </div>
 
-        <div className="relative max-w-4xl mx-auto text-center">
-          {/* Early access badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-green-500/25 bg-green-500/[0.08] px-4 py-1.5 text-xs font-medium text-green-400 mb-8 tracking-wide">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-            Now in Early Access — 7-Day Free Trial
-          </div>
-
-          {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-[3.75rem] font-bold tracking-tight leading-[1.1] mb-6 text-white">
-            Stop Running Your Business{' '}
-            <br className="hidden sm:block" />
-            <span className="text-green-400">From a Text Thread.</span>
+        <div className="relative max-w-5xl mx-auto text-center">
+          <h1 className="text-[clamp(2.8rem,8vw,6rem)] font-bold leading-[1.02] tracking-tight text-white mb-7">
+            Stop Running Your<br />
+            Business From a<br />
+            <span className="text-[#22c55e]">Text Thread.</span>
           </h1>
 
-          {/* Subheadline */}
-          <p className="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Smintos is simple field service software for home service operators — window tinters, epoxy contractors, pressure washers, remodelers, and more. Schedule jobs, send estimates, collect payments, and manage customers from one place. Works standalone. Connects to GoHighLevel when you&apos;re ready.
+          <p className="text-lg sm:text-xl text-white/50 max-w-xl mx-auto mb-10 leading-relaxed font-normal">
+            Simple field service software for home service operators. Schedule jobs, send estimates, collect payments, manage customers — from one place. Works standalone. Connects to GoHighLevel when you&apos;re ready.
           </p>
 
-          {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a
-              href="#pricing"
-              className="w-full sm:w-auto rounded-lg bg-green-500 hover:bg-green-400 transition-colors duration-150 px-7 py-3.5 text-sm font-semibold text-black"
-            >
+            <a href="#pricing" className="w-full sm:w-auto rounded-xl bg-[#22c55e] hover:bg-[#4ade80] transition-colors duration-150 px-8 py-4 text-base font-semibold text-black">
               Start Free Trial
             </a>
-            <a
-              href="#pricing"
-              className="w-full sm:w-auto rounded-lg border border-white/20 hover:border-white/40 hover:bg-white/[0.04] transition-all duration-150 px-7 py-3.5 text-sm font-semibold text-white"
-            >
+            <a href="#pricing" className="w-full sm:w-auto rounded-xl border border-white/15 hover:border-white/30 hover:bg-white/[0.04] transition-all duration-150 px-8 py-4 text-base font-semibold text-white">
               See Pricing
             </a>
           </div>
         </div>
       </section>
 
+      {/* ── Divider ── */}
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <div className="h-px bg-white/[0.06]" />
+      </div>
+
       {/* ── Problems ── */}
-      <section className="py-20 px-5 sm:px-8 bg-[#0c0e15]">
+      <section className="py-24 px-5 sm:px-8">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-xs font-semibold text-green-400 mb-3 tracking-[0.15em] uppercase">
-              Sound Familiar?
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              The Pain Is Real. We Built Around It.
+          <div className="mb-16">
+            <p className="text-xs font-semibold text-[#22c55e] mb-4 tracking-[0.2em] uppercase">Sound Familiar?</p>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight max-w-xl">
+              The pain is real.<br />We built around it.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06] rounded-2xl overflow-hidden">
             {problems.map((problem, i) => (
-              <div
-                key={i}
-                className="rounded-xl border border-white/[0.07] bg-[#10121a] p-7"
-              >
-                <div className="w-9 h-9 rounded-lg bg-red-500/10 flex items-center justify-center mb-5">
-                  <svg className="w-4 h-4 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </div>
-                <h3 className="text-base font-semibold text-white mb-2">{problem.title}</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">{problem.description}</p>
+              <div key={i} className="bg-[#050507] p-8">
+                <p className="text-3xl font-bold text-white/10 mb-5 font-mono">{String(i + 1).padStart(2, '0')}</p>
+                <h3 className="text-lg font-semibold text-white mb-3 leading-snug">{problem.title}</h3>
+                <p className="text-sm text-white/45 leading-relaxed">{problem.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* ── Divider ── */}
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <div className="h-px bg-white/[0.06]" />
+      </div>
+
       {/* ── Features ── */}
-      <section id="features" className="py-20 px-5 sm:px-8">
+      <section id="features" className="py-24 px-5 sm:px-8">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-xs font-semibold text-green-400 mb-3 tracking-[0.15em] uppercase">
-              Features
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              Everything You Need. Nothing You Don&apos;t.
+          <div className="mb-16">
+            <p className="text-xs font-semibold text-[#22c55e] mb-4 tracking-[0.2em] uppercase">Features</p>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight max-w-xl">
+              Everything you need.<br />Nothing you don&apos;t.
             </h2>
-            <p className="text-slate-400 mt-4 max-w-xl mx-auto text-base">
-              Built for how you actually work — not how a software company thinks you should.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06] rounded-2xl overflow-hidden">
             {features.map((feature, i) => (
-              <div
-                key={i}
-                className="group rounded-xl border border-white/[0.07] bg-[#10121a] p-6 hover:border-green-500/30 hover:bg-[#111520] transition-all duration-200"
-              >
-                <div className="w-10 h-10 rounded-lg bg-green-500/10 text-green-400 flex items-center justify-center mb-5 group-hover:bg-green-500/[0.15] transition-colors duration-200">
+              <div key={i} className="group bg-[#050507] hover:bg-[#0d0d12] transition-colors duration-200 p-8">
+                <div className="w-10 h-10 rounded-lg bg-[#22c55e]/10 text-[#22c55e] flex items-center justify-center mb-6 group-hover:bg-[#22c55e]/20 transition-colors duration-200">
                   {feature.icon}
                 </div>
                 <h3 className="text-base font-semibold text-white mb-2">{feature.title}</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">{feature.description}</p>
+                <p className="text-sm text-white/45 leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* ── Divider ── */}
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <div className="h-px bg-white/[0.06]" />
+      </div>
+
       {/* ── Pricing ── */}
-      <section id="pricing" className="py-20 px-5 sm:px-8 bg-[#0c0e15]">
+      <section id="pricing" className="py-24 px-5 sm:px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-xs font-semibold text-green-400 mb-3 tracking-[0.15em] uppercase">
-              Pricing
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              Simple, Flat Pricing. No Surprises.
+          <div className="mb-16">
+            <p className="text-xs font-semibold text-[#22c55e] mb-4 tracking-[0.2em] uppercase">Pricing</p>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
+              Simple, flat pricing.<br />No surprises.
             </h2>
-            <p className="text-slate-400 mt-4">
-              Start your 7-day free trial today. No credit card required.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-            {/* Core Plan */}
-            <div className="rounded-xl border border-white/[0.07] bg-[#10121a] p-8">
-              <div className="mb-7">
-                <h3 className="text-xl font-bold text-white mb-1">Core</h3>
-                <p className="text-sm text-slate-400 mb-5">
-                  Everything to run your field ops. No GHL required.
-                </p>
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-5xl font-bold text-white tracking-tight">$57</span>
-                  <span className="text-slate-400 text-sm">/mo</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {/* Core */}
+            <div className="rounded-2xl border border-white/[0.08] bg-[#0a0a0f] p-8">
+              <div className="mb-8">
+                <h3 className="text-sm font-semibold text-white/50 uppercase tracking-widest mb-4">Core</h3>
+                <div className="flex items-end gap-2 mb-3">
+                  <span className="text-6xl font-bold text-white tracking-tight leading-none">$57</span>
+                  <span className="text-white/40 text-sm mb-1.5">/mo</span>
                 </div>
+                <p className="text-sm text-white/45">Everything to run your field ops. No GHL required.</p>
               </div>
 
-              <a
-                href="#"
-                className="block w-full rounded-lg border border-white/20 hover:border-white/40 hover:bg-white/[0.04] transition-all duration-150 px-5 py-3 text-sm font-semibold text-white text-center mb-8"
-              >
+              <a href="#" className="block w-full rounded-xl border border-white/15 hover:border-white/30 hover:bg-white/[0.04] transition-all duration-150 px-5 py-3.5 text-sm font-semibold text-white text-center mb-8">
                 Start Free Trial
               </a>
 
-              <ul className="space-y-3.5">
+              <ul className="space-y-3">
                 {coreFeatures.map((f, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-slate-300">
-                    <span className="text-green-400">
-                      <IconCheck />
-                    </span>
+                  <li key={i} className="flex items-start gap-3 text-sm text-white/60">
+                    <span className="text-[#22c55e] mt-0.5"><IconCheck /></span>
                     {f}
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Pro Plan */}
-            <div className="relative rounded-xl border border-green-500/40 bg-[#10121a] p-8 shadow-[0_0_40px_rgba(34,197,94,0.06)]">
-              {/* Most Popular badge */}
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                <span className="inline-block rounded-full bg-green-500 text-black text-[11px] font-bold px-4 py-1 tracking-wide">
+            {/* Pro */}
+            <div className="relative rounded-2xl border border-[#22c55e]/30 bg-[#0a0a0f] p-8 shadow-[0_0_60px_rgba(34,197,94,0.07)]">
+              <div className="absolute -top-3.5 left-6">
+                <span className="inline-block rounded-full bg-[#22c55e] text-black text-[11px] font-bold px-4 py-1 tracking-wide">
                   Most Popular
                 </span>
               </div>
 
-              <div className="mb-7">
-                <h3 className="text-xl font-bold text-white mb-1">Pro</h3>
-                <p className="text-sm text-slate-400 mb-5">
-                  Core plus full GoHighLevel sync. For operators ready to connect their field ops to their marketing and sales system.
-                </p>
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-5xl font-bold text-white tracking-tight">$87</span>
-                  <span className="text-slate-400 text-sm">/mo</span>
+              <div className="mb-8">
+                <h3 className="text-sm font-semibold text-white/50 uppercase tracking-widest mb-4">Pro</h3>
+                <div className="flex items-end gap-2 mb-3">
+                  <span className="text-6xl font-bold text-white tracking-tight leading-none">$87</span>
+                  <span className="text-white/40 text-sm mb-1.5">/mo</span>
                 </div>
+                <p className="text-sm text-white/45">Core plus full GoHighLevel sync for operators ready to scale.</p>
               </div>
 
-              <a
-                href="#"
-                className="block w-full rounded-lg bg-green-500 hover:bg-green-400 transition-colors duration-150 px-5 py-3 text-sm font-semibold text-black text-center mb-8"
-              >
+              <a href="#" className="block w-full rounded-xl bg-[#22c55e] hover:bg-[#4ade80] transition-colors duration-150 px-5 py-3.5 text-sm font-semibold text-black text-center mb-8">
                 Start Free Trial
               </a>
 
-              <ul className="space-y-3.5">
+              <ul className="space-y-3">
                 {proFeatures.map((f, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-slate-300">
-                    <span className="text-green-400">
-                      <IconCheck />
-                    </span>
+                  <li key={i} className="flex items-start gap-3 text-sm text-white/60">
+                    <span className="text-[#22c55e] mt-0.5"><IconCheck /></span>
                     {f}
                   </li>
                 ))}
@@ -457,60 +398,57 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Divider ── */}
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <div className="h-px bg-white/[0.06]" />
+      </div>
+
       {/* ── How It Works ── */}
-      <section id="how-it-works" className="py-20 px-5 sm:px-8">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-xs font-semibold text-green-400 mb-3 tracking-[0.15em] uppercase">
-              How It Works
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              Up and Running in Minutes. Not Days.
+      <section id="how-it-works" className="py-24 px-5 sm:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-16">
+            <p className="text-xs font-semibold text-[#22c55e] mb-4 tracking-[0.2em] uppercase">How It Works</p>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
+              Up and running<br />in minutes.
             </h2>
           </div>
 
-          <div className="space-y-5">
+          <div className="space-y-px bg-white/[0.06] rounded-2xl overflow-hidden">
             {steps.map((step, i) => (
-              <div
-                key={i}
-                className="flex gap-5 sm:gap-7 rounded-xl border border-white/[0.07] bg-[#10121a] p-6 sm:p-8"
-              >
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center">
-                  <span className="text-green-400 font-bold text-sm font-mono">{step.number}</span>
+              <div key={i} className="flex gap-6 sm:gap-10 bg-[#050507] hover:bg-[#0d0d12] transition-colors duration-200 p-8">
+                <div className="flex-shrink-0 pt-1">
+                  <span className="text-4xl font-bold text-white/10 font-mono leading-none">{step.number}</span>
                 </div>
                 <div>
-                  <h3 className="text-base font-semibold text-white mb-2">{step.title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{step.description}</p>
+                  <h3 className="text-lg font-semibold text-white mb-2">{step.title}</h3>
+                  <p className="text-sm text-white/45 leading-relaxed">{step.description}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 text-center">
-            <a
-              href="#pricing"
-              className="inline-block rounded-lg bg-green-500 hover:bg-green-400 transition-colors duration-150 px-8 py-3.5 text-sm font-semibold text-black"
-            >
+          <div className="mt-14 flex flex-col sm:flex-row items-center gap-4">
+            <a href="#pricing" className="w-full sm:w-auto rounded-xl bg-[#22c55e] hover:bg-[#4ade80] transition-colors duration-150 px-8 py-4 text-base font-semibold text-black text-center">
               Start Free Trial
             </a>
+            <p className="text-sm text-white/30">No credit card required. 7 days free.</p>
           </div>
         </div>
       </section>
 
       {/* ── Footer ── */}
-      <footer className="border-t border-white/[0.06] bg-[#08090d] py-10 px-5 sm:px-8">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <div className="h-px bg-white/[0.06]" />
+      </div>
+      <footer className="py-10 px-5 sm:px-8">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span className="text-base font-bold tracking-widest text-white">SMINTOS</span>
-          <p className="text-xs text-slate-500">
+          <span className="text-sm font-bold tracking-[0.2em] text-white uppercase">Smintos</span>
+          <p className="text-xs text-white/25">
             &copy; {new Date().getFullYear()} Smintos. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
-            <Link href="/terms" className="text-xs text-slate-500 hover:text-slate-300 transition-colors duration-150">
-              Terms
-            </Link>
-            <Link href="/privacy" className="text-xs text-slate-500 hover:text-slate-300 transition-colors duration-150">
-              Privacy
-            </Link>
+            <Link href="/terms" className="text-xs text-white/30 hover:text-white/60 transition-colors duration-150">Terms</Link>
+            <Link href="/privacy" className="text-xs text-white/30 hover:text-white/60 transition-colors duration-150">Privacy</Link>
           </div>
         </div>
       </footer>
