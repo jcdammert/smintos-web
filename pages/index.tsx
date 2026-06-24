@@ -309,12 +309,12 @@ export default function Home() {
       </section>
 
       {/* ── Features ── */}
-      <section id="features" className="py-24 px-5 sm:px-8 bg-[#0d0d0d]">
+      <section id="features" className="py-24 px-5 sm:px-8 bg-[#f7f5f0]">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-14">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
             <div>
               <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ color: MINT }}>Features</p>
-              <h2 className="font-display text-4xl sm:text-5xl font-bold text-white leading-tight">
+              <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight">
                 Everything you need.<br />Nothing you don&apos;t.
               </h2>
             </div>
@@ -323,16 +323,74 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {features.map((feature, i) => (
-              <div key={i} className="group rounded-2xl border border-white/[0.07] bg-white/[0.04] hover:bg-white/[0.08] transition-colors duration-200 p-7">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-6 transition-colors duration-200" style={{ background: `${MINT}22`, color: MINT }}>
-                  {feature.icon}
-                </div>
-                <h3 className="text-base font-semibold text-white mb-2">{feature.title}</h3>
-                <p className="text-sm text-white/45 leading-relaxed">{feature.description}</p>
+          {/* Bento grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+            {/* 1 — wide, white */}
+            <div className="lg:col-span-2 bg-white rounded-3xl p-8 relative overflow-hidden">
+              <span className="pointer-events-none absolute -right-2 -bottom-8 text-[11rem] font-black text-black/[0.04] leading-none select-none">01</span>
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-8" style={{ background: `${MINT}20`, color: MINT }}>
+                <IconCalendar />
               </div>
-            ))}
+              <h3 className="font-display text-2xl font-bold text-[#0d0d0d] mb-3">Job Scheduling & Dispatching</h3>
+              <p className="text-[#0d0d0d]/50 leading-relaxed max-w-sm">Assign jobs, set times, and keep your crew moving with a clear daily view of everything on the board.</p>
+            </div>
+
+            {/* 2 — narrow, dark */}
+            <div className="lg:col-span-1 bg-[#0d0d0d] rounded-3xl p-8 relative overflow-hidden">
+              <span className="pointer-events-none absolute -right-2 -bottom-8 text-[11rem] font-black text-white/[0.04] leading-none select-none">02</span>
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-8" style={{ background: `${MINT}25`, color: MINT }}>
+                <IconDocument />
+              </div>
+              <h3 className="font-display text-xl font-bold text-white mb-3">Estimates & Invoicing</h3>
+              <p className="text-white/45 text-sm leading-relaxed">Create and send professional estimates and invoices in seconds — from anywhere.</p>
+            </div>
+
+            {/* 3 — narrow, mint */}
+            <div className="lg:col-span-1 rounded-3xl p-8 relative overflow-hidden" style={{ background: MINT }}>
+              <span className="pointer-events-none absolute -right-2 -bottom-8 text-[11rem] font-black text-black/[0.07] leading-none select-none">03</span>
+              <div className="w-12 h-12 rounded-2xl bg-black/10 flex items-center justify-center mb-8 text-black">
+                <IconCreditCard />
+              </div>
+              <h3 className="font-display text-xl font-bold text-black mb-3">Payment Collection</h3>
+              <p className="text-black/55 text-sm leading-relaxed">Accept payments on the spot. Get paid faster without the back-and-forth.</p>
+            </div>
+
+            {/* 4 — wide, white */}
+            <div className="lg:col-span-2 bg-white rounded-3xl p-8 relative overflow-hidden">
+              <span className="pointer-events-none absolute -right-2 -bottom-8 text-[11rem] font-black text-black/[0.04] leading-none select-none">04</span>
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-8" style={{ background: `${MINT}20`, color: MINT }}>
+                <IconUsers />
+              </div>
+              <h3 className="font-display text-2xl font-bold text-[#0d0d0d] mb-3">Customer Management</h3>
+              <p className="text-[#0d0d0d]/50 leading-relaxed max-w-sm">Every customer, job history, and note in one place — always at your fingertips when you need it.</p>
+            </div>
+
+            {/* 5 — narrow, cream border */}
+            <div className="lg:col-span-1 bg-white rounded-3xl p-8 relative overflow-hidden border border-black/[0.07]">
+              <span className="pointer-events-none absolute -right-2 -bottom-8 text-[11rem] font-black text-black/[0.04] leading-none select-none">05</span>
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-8" style={{ background: `${MINT}20`, color: MINT }}>
+                <IconCamera />
+              </div>
+              <h3 className="font-display text-xl font-bold text-[#0d0d0d] mb-3">Job Notes & Photos</h3>
+              <p className="text-[#0d0d0d]/50 text-sm leading-relaxed">Document every job. Cover yourself, look professional, close disputes fast.</p>
+            </div>
+
+            {/* 6 — full width, dark */}
+            <div className="lg:col-span-3 bg-[#0d0d0d] rounded-3xl p-8 relative overflow-hidden flex flex-col sm:flex-row sm:items-center gap-8">
+              <span className="pointer-events-none absolute right-8 -bottom-10 text-[11rem] font-black text-white/[0.04] leading-none select-none">06</span>
+              <div className="w-12 h-12 rounded-2xl flex-shrink-0 flex items-center justify-center" style={{ background: `${MINT}25`, color: MINT }}>
+                <IconPhone />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-display text-2xl font-bold text-white mb-2">Mobile First Design</h3>
+                <p className="text-white/45 leading-relaxed max-w-xl">Built for the field. Works on your phone, tablet, or desktop without missing a beat — because your office is wherever the job is.</p>
+              </div>
+              <a href="#pricing" className="flex-shrink-0 self-start sm:self-auto inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-black" style={{ background: MINT }}>
+                Start Free Trial <IconArrow />
+              </a>
+            </div>
+
           </div>
         </div>
       </section>
