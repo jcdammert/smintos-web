@@ -311,80 +311,112 @@ export default function Home() {
       {/* ── Features ── */}
       <section id="features" className="py-24 px-5 sm:px-8 bg-[#f7f5f0]">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
-            <div>
-              <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ color: MINT }}>Features</p>
-              <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight">
-                Everything you need.<br />Nothing you don&apos;t.
-              </h2>
-            </div>
-            <a href="#pricing" className="self-start sm:self-auto inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-bold text-black flex-shrink-0" style={{ background: MINT }}>
-              Start Free Trial <IconArrow />
-            </a>
+          <div className="mb-12">
+            <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ color: MINT }}>Features</p>
+            <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight">
+              Everything you need.<br />Nothing you don&apos;t.
+            </h2>
           </div>
 
-          {/* Bento grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
 
-            {/* 1 — wide, white */}
-            <div className="lg:col-span-2 bg-white rounded-3xl p-8 relative overflow-hidden">
-              <span className="pointer-events-none absolute -right-2 -bottom-8 text-[11rem] font-black text-black/[0.04] leading-none select-none">01</span>
-              <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-8" style={{ background: `${MINT}20`, color: MINT }}>
-                <IconCalendar />
-              </div>
-              <h3 className="font-display text-2xl font-bold text-[#0d0d0d] mb-3">Job Scheduling & Dispatching</h3>
-              <p className="text-[#0d0d0d]/50 leading-relaxed max-w-sm">Assign jobs, set times, and keep your crew moving with a clear daily view of everything on the board.</p>
+            {/* 1 — narrow, white, bullet list */}
+            <div className="lg:col-span-1 bg-white rounded-3xl p-9 border border-black/[0.06] flex flex-col">
+              <h3 className="font-display text-2xl font-bold text-[#0d0d0d] mb-6">Job Scheduling & Dispatching</h3>
+              <ul className="space-y-4 mt-auto">
+                {['Schedule and assign jobs in seconds', 'Clear daily crew view — no guessing', 'Dispatch updates without group texts'].map((b, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-[#0d0d0d]/60">
+                    <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: `${MINT}25`, color: MINT }}>
+                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                    </span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* 2 — narrow, dark */}
-            <div className="lg:col-span-1 bg-[#0d0d0d] rounded-3xl p-8 relative overflow-hidden">
-              <span className="pointer-events-none absolute -right-2 -bottom-8 text-[11rem] font-black text-white/[0.04] leading-none select-none">02</span>
-              <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-8" style={{ background: `${MINT}25`, color: MINT }}>
-                <IconDocument />
+            {/* 2 — wide, white, mini invoice mockup */}
+            <div className="lg:col-span-2 bg-white rounded-3xl p-9 border border-black/[0.06] overflow-hidden">
+              <h3 className="font-display text-2xl font-bold text-[#0d0d0d] mb-3">Estimates & Invoicing</h3>
+              <p className="text-[#0d0d0d]/50 text-sm mb-8 max-w-xs">Create and send professional estimates and invoices in seconds — from anywhere.</p>
+              {/* Mini estimate card */}
+              <div className="rounded-2xl border border-black/[0.07] bg-[#f7f5f0] p-5 max-w-xs">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[10px] font-bold tracking-widest text-black/30 uppercase">Estimate #1042</span>
+                  <span className="text-[11px] font-bold px-2.5 py-1 rounded-full" style={{ background: `${MINT}25`, color: '#00a85f' }}>Pending</span>
+                </div>
+                <div className="space-y-2 mb-4 text-sm">
+                  <div className="flex justify-between text-[#0d0d0d]/60"><span>Labor & materials</span><span>$620</span></div>
+                  <div className="flex justify-between text-[#0d0d0d]/60"><span>Equipment fee</span><span>$80</span></div>
+                  <div className="h-px bg-black/[0.07] my-2" />
+                  <div className="flex justify-between font-bold text-[#0d0d0d]"><span>Total</span><span>$700</span></div>
+                </div>
+                <div className="rounded-xl py-2.5 text-center text-xs font-bold text-black" style={{ background: MINT }}>Send Estimate →</div>
               </div>
-              <h3 className="font-display text-xl font-bold text-white mb-3">Estimates & Invoicing</h3>
-              <p className="text-white/45 text-sm leading-relaxed">Create and send professional estimates and invoices in seconds — from anywhere.</p>
             </div>
 
-            {/* 3 — narrow, mint */}
-            <div className="lg:col-span-1 rounded-3xl p-8 relative overflow-hidden" style={{ background: MINT }}>
-              <span className="pointer-events-none absolute -right-2 -bottom-8 text-[11rem] font-black text-black/[0.07] leading-none select-none">03</span>
-              <div className="w-12 h-12 rounded-2xl bg-black/10 flex items-center justify-center mb-8 text-black">
-                <IconCreditCard />
+            {/* 3 — wide, dark, payment visual */}
+            <div className="lg:col-span-2 bg-[#0d0d0d] rounded-3xl p-9 overflow-hidden">
+              <h3 className="font-display text-2xl font-bold text-white mb-3">Payment Collection</h3>
+              <p className="text-white/45 text-sm mb-8 max-w-xs">Accept payments on the spot. No awkward follow-ups. Get paid before you leave the driveway.</p>
+              {/* Mini payment visual */}
+              <div className="flex gap-3">
+                <div className="flex-1 rounded-2xl border border-white/[0.07] bg-white/[0.04] p-4">
+                  <p className="text-[10px] font-bold tracking-widest text-white/25 uppercase mb-3">Collected today</p>
+                  <p className="text-3xl font-bold" style={{ color: MINT }}>$1,840</p>
+                  <p className="text-xs text-white/30 mt-1">3 payments</p>
+                </div>
+                <div className="flex-1 rounded-2xl border border-white/[0.07] bg-white/[0.04] p-4">
+                  <p className="text-[10px] font-bold tracking-widest text-white/25 uppercase mb-3">This month</p>
+                  <p className="text-3xl font-bold text-white">$9,420</p>
+                  <p className="text-xs mt-1" style={{ color: MINT }}>↑ 18% vs last</p>
+                </div>
               </div>
-              <h3 className="font-display text-xl font-bold text-black mb-3">Payment Collection</h3>
-              <p className="text-black/55 text-sm leading-relaxed">Accept payments on the spot. Get paid faster without the back-and-forth.</p>
             </div>
 
-            {/* 4 — wide, white */}
-            <div className="lg:col-span-2 bg-white rounded-3xl p-8 relative overflow-hidden">
-              <span className="pointer-events-none absolute -right-2 -bottom-8 text-[11rem] font-black text-black/[0.04] leading-none select-none">04</span>
-              <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-8" style={{ background: `${MINT}20`, color: MINT }}>
-                <IconUsers />
-              </div>
-              <h3 className="font-display text-2xl font-bold text-[#0d0d0d] mb-3">Customer Management</h3>
-              <p className="text-[#0d0d0d]/50 leading-relaxed max-w-sm">Every customer, job history, and note in one place — always at your fingertips when you need it.</p>
+            {/* 4 — narrow, mint, bullet list */}
+            <div className="lg:col-span-1 rounded-3xl p-9 flex flex-col" style={{ background: MINT }}>
+              <h3 className="font-display text-2xl font-bold text-black mb-6">Customer Management</h3>
+              <ul className="space-y-4 mt-auto">
+                {['Full job history per customer', 'Notes & photos on every record', 'Never lose a contact again'].map((b, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-black/65">
+                    <span className="w-5 h-5 rounded-full bg-black/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-3 h-3 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                    </span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* 5 — narrow, cream border */}
-            <div className="lg:col-span-1 bg-white rounded-3xl p-8 relative overflow-hidden border border-black/[0.07]">
-              <span className="pointer-events-none absolute -right-2 -bottom-8 text-[11rem] font-black text-black/[0.04] leading-none select-none">05</span>
-              <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-8" style={{ background: `${MINT}20`, color: MINT }}>
-                <IconCamera />
+            {/* 5 — narrow, white */}
+            <div className="lg:col-span-1 bg-white rounded-3xl p-9 border border-black/[0.06]">
+              <h3 className="font-display text-2xl font-bold text-[#0d0d0d] mb-3">Job Notes & Photo Uploads</h3>
+              <p className="text-[#0d0d0d]/50 text-sm leading-relaxed mb-6">Document every job with notes and photos. Cover yourself, look professional, and close disputes fast.</p>
+              <div className="grid grid-cols-3 gap-2">
+                {[...Array(6)].map((_, i) => (
+                  <div key={i} className="aspect-square rounded-xl bg-[#f7f5f0] border border-black/[0.06] flex items-center justify-center">
+                    <svg className="w-5 h-5 text-black/20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                    </svg>
+                  </div>
+                ))}
               </div>
-              <h3 className="font-display text-xl font-bold text-[#0d0d0d] mb-3">Job Notes & Photos</h3>
-              <p className="text-[#0d0d0d]/50 text-sm leading-relaxed">Document every job. Cover yourself, look professional, close disputes fast.</p>
             </div>
 
-            {/* 6 — full width, dark */}
-            <div className="lg:col-span-3 bg-[#0d0d0d] rounded-3xl p-8 relative overflow-hidden flex flex-col sm:flex-row sm:items-center gap-8">
-              <span className="pointer-events-none absolute right-8 -bottom-10 text-[11rem] font-black text-white/[0.04] leading-none select-none">06</span>
-              <div className="w-12 h-12 rounded-2xl flex-shrink-0 flex items-center justify-center" style={{ background: `${MINT}25`, color: MINT }}>
-                <IconPhone />
-              </div>
+            {/* 6 — wide, dark, horizontal CTA */}
+            <div className="lg:col-span-2 bg-[#0d0d0d] rounded-3xl p-9 flex flex-col sm:flex-row sm:items-end gap-8">
               <div className="flex-1">
-                <h3 className="font-display text-2xl font-bold text-white mb-2">Mobile First Design</h3>
-                <p className="text-white/45 leading-relaxed max-w-xl">Built for the field. Works on your phone, tablet, or desktop without missing a beat — because your office is wherever the job is.</p>
+                <h3 className="font-display text-2xl font-bold text-white mb-3">Mobile First Design</h3>
+                <p className="text-white/45 text-sm leading-relaxed">Built for the field. Works on your phone, tablet, or desktop without missing a beat — because your office is wherever the job is.</p>
+              </div>
+              <div className="flex-shrink-0 flex flex-col gap-2 text-sm text-white/25">
+                {['iOS', 'Android', 'Desktop'].map(p => (
+                  <div key={p} className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full" style={{ background: MINT }} />
+                    {p}
+                  </div>
+                ))}
               </div>
               <a href="#pricing" className="flex-shrink-0 self-start sm:self-auto inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-black" style={{ background: MINT }}>
                 Start Free Trial <IconArrow />
