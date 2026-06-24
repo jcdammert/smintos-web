@@ -172,7 +172,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-[#050507] text-white font-sans antialiased">
+    <div className="min-h-screen bg-[#f7f5f0] text-[#0d0d0d] font-sans antialiased">
       <Head>
         <title>Smintos — Field Service Software for Home Service Operators</title>
         <meta
@@ -188,35 +188,29 @@ export default function Home() {
       </div>
 
       {/* ── Nav ── */}
-      <nav className="sticky top-0 z-50 border-b border-white/[0.05] bg-[#050507]/95 backdrop-blur-md">
+      <nav className="sticky top-0 z-50 border-b border-black/[0.07] bg-[#f7f5f0]/95 backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-3 items-center h-16">
-            <Link href="/" className="text-base font-bold tracking-[0.2em] text-white uppercase">
+            <Link href="/" className="text-base font-bold tracking-[0.2em] text-[#0d0d0d] uppercase">
               Smintos
             </Link>
 
             <div className="hidden md:flex items-center justify-center gap-8">
-              <a href="#features" className="text-sm font-medium text-white/50 hover:text-white transition-colors duration-150">
-                Features
-              </a>
-              <a href="#pricing" className="text-sm font-medium text-white/50 hover:text-white transition-colors duration-150">
-                Pricing
-              </a>
-              <a href="#how-it-works" className="text-sm font-medium text-white/50 hover:text-white transition-colors duration-150">
-                How It Works
-              </a>
+              <a href="#features" className="text-sm font-medium text-[#0d0d0d]/50 hover:text-[#0d0d0d] transition-colors duration-150">Features</a>
+              <a href="#pricing" className="text-sm font-medium text-[#0d0d0d]/50 hover:text-[#0d0d0d] transition-colors duration-150">Pricing</a>
+              <a href="#how-it-works" className="text-sm font-medium text-[#0d0d0d]/50 hover:text-[#0d0d0d] transition-colors duration-150">How It Works</a>
             </div>
 
             <div className="flex items-center justify-end gap-3">
               <a
                 href="#pricing"
-                className="hidden md:inline-flex items-center rounded-lg bg-[#22c55e] hover:bg-[#4ade80] transition-colors duration-150 px-4 py-2 text-sm font-semibold text-black"
+                className="hidden md:inline-flex items-center rounded-lg bg-[#22c55e] hover:bg-[#16a34a] transition-colors duration-150 px-4 py-2 text-sm font-semibold text-black"
               >
                 Start Free Trial
               </a>
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="md:hidden p-2 -mr-2 text-white/50 hover:text-white transition-colors"
+                className="md:hidden p-2 -mr-2 text-[#0d0d0d]/50 hover:text-[#0d0d0d] transition-colors"
               >
                 {menuOpen ? <IconClose /> : <IconMenu />}
               </button>
@@ -225,12 +219,12 @@ export default function Home() {
         </div>
 
         {menuOpen && (
-          <div className="md:hidden border-t border-white/[0.05] bg-[#050507] px-5 py-4 space-y-1">
-            <a href="#features" onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2.5 text-sm font-medium text-white/60 hover:text-white hover:bg-white/[0.04] transition-colors">Features</a>
-            <a href="#pricing" onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2.5 text-sm font-medium text-white/60 hover:text-white hover:bg-white/[0.04] transition-colors">Pricing</a>
-            <a href="#how-it-works" onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2.5 text-sm font-medium text-white/60 hover:text-white hover:bg-white/[0.04] transition-colors">How It Works</a>
+          <div className="md:hidden border-t border-black/[0.07] bg-[#f7f5f0] px-5 py-4 space-y-1">
+            <a href="#features" onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2.5 text-sm font-medium text-[#0d0d0d]/60 hover:text-[#0d0d0d] hover:bg-black/[0.04] transition-colors">Features</a>
+            <a href="#pricing" onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2.5 text-sm font-medium text-[#0d0d0d]/60 hover:text-[#0d0d0d] hover:bg-black/[0.04] transition-colors">Pricing</a>
+            <a href="#how-it-works" onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2.5 text-sm font-medium text-[#0d0d0d]/60 hover:text-[#0d0d0d] hover:bg-black/[0.04] transition-colors">How It Works</a>
             <div className="pt-2">
-              <a href="#pricing" onClick={() => setMenuOpen(false)} className="block rounded-lg bg-[#22c55e] hover:bg-[#4ade80] transition-colors px-4 py-3 text-sm font-semibold text-black text-center">
+              <a href="#pricing" onClick={() => setMenuOpen(false)} className="block rounded-lg bg-[#22c55e] hover:bg-[#16a34a] transition-colors px-4 py-3 text-sm font-semibold text-black text-center">
                 Start Free Trial
               </a>
             </div>
@@ -239,28 +233,23 @@ export default function Home() {
       </nav>
 
       {/* ── Hero ── */}
-      <section className="relative px-5 sm:px-8 pt-24 pb-28 overflow-hidden">
-        {/* Glow */}
-        <div className="pointer-events-none absolute inset-0 flex justify-center overflow-hidden">
-          <div className="mt-0 w-[700px] h-[500px] rounded-full bg-[#22c55e]/[0.07] blur-[100px]" />
-        </div>
-
-        <div className="relative max-w-5xl mx-auto text-center">
-          <h1 className="text-[clamp(2.8rem,8vw,6rem)] font-bold leading-[1.02] tracking-tight text-white mb-7">
+      <section className="px-5 sm:px-8 pt-24 pb-28">
+        <div className="max-w-5xl mx-auto text-center">
+          <h1 className="text-[clamp(2.8rem,8vw,6rem)] font-bold leading-[1.02] tracking-tight text-[#0d0d0d] mb-7">
             Stop Running Your<br />
             Business From a<br />
             <span className="text-[#22c55e]">Text Thread.</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-white/50 max-w-xl mx-auto mb-10 leading-relaxed font-normal">
+          <p className="text-lg sm:text-xl text-[#0d0d0d]/55 max-w-xl mx-auto mb-10 leading-relaxed font-normal">
             Simple field service software for home service operators. Schedule jobs, send estimates, collect payments, manage customers — from one place. Works standalone. Connects to GoHighLevel when you&apos;re ready.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a href="#pricing" className="w-full sm:w-auto rounded-xl bg-[#22c55e] hover:bg-[#4ade80] transition-colors duration-150 px-8 py-4 text-base font-semibold text-black">
+            <a href="#pricing" className="w-full sm:w-auto rounded-xl bg-[#22c55e] hover:bg-[#16a34a] transition-colors duration-150 px-8 py-4 text-base font-semibold text-black">
               Start Free Trial
             </a>
-            <a href="#pricing" className="w-full sm:w-auto rounded-xl border border-white/15 hover:border-white/30 hover:bg-white/[0.04] transition-all duration-150 px-8 py-4 text-base font-semibold text-white">
+            <a href="#pricing" className="w-full sm:w-auto rounded-xl border border-black/15 hover:border-black/30 hover:bg-black/[0.04] transition-all duration-150 px-8 py-4 text-base font-semibold text-[#0d0d0d]">
               See Pricing
             </a>
           </div>
@@ -268,26 +257,24 @@ export default function Home() {
       </section>
 
       {/* ── Divider ── */}
-      <div className="max-w-6xl mx-auto px-5 sm:px-8">
-        <div className="h-px bg-white/[0.06]" />
-      </div>
+      <div className="max-w-6xl mx-auto px-5 sm:px-8"><div className="h-px bg-black/[0.08]" /></div>
 
       {/* ── Problems ── */}
       <section className="py-24 px-5 sm:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="mb-16">
             <p className="text-xs font-semibold text-[#22c55e] mb-4 tracking-[0.2em] uppercase">Sound Familiar?</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight max-w-xl">
+            <h2 className="text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight max-w-xl">
               The pain is real.<br />We built around it.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06] rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-black/[0.08] rounded-2xl overflow-hidden">
             {problems.map((problem, i) => (
-              <div key={i} className="bg-[#050507] p-8">
-                <p className="text-3xl font-bold text-white/10 mb-5 font-mono">{String(i + 1).padStart(2, '0')}</p>
-                <h3 className="text-lg font-semibold text-white mb-3 leading-snug">{problem.title}</h3>
-                <p className="text-sm text-white/45 leading-relaxed">{problem.description}</p>
+              <div key={i} className="bg-[#f7f5f0] p-8">
+                <p className="text-3xl font-bold text-black/10 mb-5 font-mono">{String(i + 1).padStart(2, '0')}</p>
+                <h3 className="text-lg font-semibold text-[#0d0d0d] mb-3 leading-snug">{problem.title}</h3>
+                <p className="text-sm text-[#0d0d0d]/50 leading-relaxed">{problem.description}</p>
               </div>
             ))}
           </div>
@@ -295,28 +282,26 @@ export default function Home() {
       </section>
 
       {/* ── Divider ── */}
-      <div className="max-w-6xl mx-auto px-5 sm:px-8">
-        <div className="h-px bg-white/[0.06]" />
-      </div>
+      <div className="max-w-6xl mx-auto px-5 sm:px-8"><div className="h-px bg-black/[0.08]" /></div>
 
       {/* ── Features ── */}
       <section id="features" className="py-24 px-5 sm:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="mb-16">
             <p className="text-xs font-semibold text-[#22c55e] mb-4 tracking-[0.2em] uppercase">Features</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight max-w-xl">
+            <h2 className="text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight max-w-xl">
               Everything you need.<br />Nothing you don&apos;t.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06] rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-black/[0.08] rounded-2xl overflow-hidden">
             {features.map((feature, i) => (
-              <div key={i} className="group bg-[#050507] hover:bg-[#0d0d12] transition-colors duration-200 p-8">
-                <div className="w-10 h-10 rounded-lg bg-[#22c55e]/10 text-[#22c55e] flex items-center justify-center mb-6 group-hover:bg-[#22c55e]/20 transition-colors duration-200">
+              <div key={i} className="group bg-[#f7f5f0] hover:bg-white transition-colors duration-200 p-8">
+                <div className="w-10 h-10 rounded-lg bg-[#22c55e]/15 text-[#16a34a] flex items-center justify-center mb-6 group-hover:bg-[#22c55e]/25 transition-colors duration-200">
                   {feature.icon}
                 </div>
-                <h3 className="text-base font-semibold text-white mb-2">{feature.title}</h3>
-                <p className="text-sm text-white/45 leading-relaxed">{feature.description}</p>
+                <h3 className="text-base font-semibold text-[#0d0d0d] mb-2">{feature.title}</h3>
+                <p className="text-sm text-[#0d0d0d]/50 leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -324,40 +309,38 @@ export default function Home() {
       </section>
 
       {/* ── Divider ── */}
-      <div className="max-w-6xl mx-auto px-5 sm:px-8">
-        <div className="h-px bg-white/[0.06]" />
-      </div>
+      <div className="max-w-6xl mx-auto px-5 sm:px-8"><div className="h-px bg-black/[0.08]" /></div>
 
       {/* ── Pricing ── */}
       <section id="pricing" className="py-24 px-5 sm:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="mb-16">
             <p className="text-xs font-semibold text-[#22c55e] mb-4 tracking-[0.2em] uppercase">Pricing</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
+            <h2 className="text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight">
               Simple, flat pricing.<br />No surprises.
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {/* Core */}
-            <div className="rounded-2xl border border-white/[0.08] bg-[#0a0a0f] p-8">
+            <div className="rounded-2xl border border-black/[0.09] bg-white p-8">
               <div className="mb-8">
-                <h3 className="text-sm font-semibold text-white/50 uppercase tracking-widest mb-4">Core</h3>
+                <h3 className="text-xs font-semibold text-[#0d0d0d]/40 uppercase tracking-widest mb-4">Core</h3>
                 <div className="flex items-end gap-2 mb-3">
-                  <span className="text-6xl font-bold text-white tracking-tight leading-none">$57</span>
-                  <span className="text-white/40 text-sm mb-1.5">/mo</span>
+                  <span className="text-6xl font-bold text-[#0d0d0d] tracking-tight leading-none">$57</span>
+                  <span className="text-[#0d0d0d]/40 text-sm mb-1.5">/mo</span>
                 </div>
-                <p className="text-sm text-white/45">Everything to run your field ops. No GHL required.</p>
+                <p className="text-sm text-[#0d0d0d]/50">Everything to run your field ops. No GHL required.</p>
               </div>
 
-              <a href="#" className="block w-full rounded-xl border border-white/15 hover:border-white/30 hover:bg-white/[0.04] transition-all duration-150 px-5 py-3.5 text-sm font-semibold text-white text-center mb-8">
+              <a href="#" className="block w-full rounded-xl border border-black/15 hover:border-black/30 hover:bg-black/[0.03] transition-all duration-150 px-5 py-3.5 text-sm font-semibold text-[#0d0d0d] text-center mb-8">
                 Start Free Trial
               </a>
 
               <ul className="space-y-3">
                 {coreFeatures.map((f, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-white/60">
-                    <span className="text-[#22c55e] mt-0.5"><IconCheck /></span>
+                  <li key={i} className="flex items-start gap-3 text-sm text-[#0d0d0d]/65">
+                    <span className="text-[#22c55e]"><IconCheck /></span>
                     {f}
                   </li>
                 ))}
@@ -365,7 +348,7 @@ export default function Home() {
             </div>
 
             {/* Pro */}
-            <div className="relative rounded-2xl border border-[#22c55e]/30 bg-[#0a0a0f] p-8 shadow-[0_0_60px_rgba(34,197,94,0.07)]">
+            <div className="relative rounded-2xl border border-[#22c55e]/50 bg-white p-8 shadow-[0_0_60px_rgba(34,197,94,0.08)]">
               <div className="absolute -top-3.5 left-6">
                 <span className="inline-block rounded-full bg-[#22c55e] text-black text-[11px] font-bold px-4 py-1 tracking-wide">
                   Most Popular
@@ -373,22 +356,22 @@ export default function Home() {
               </div>
 
               <div className="mb-8">
-                <h3 className="text-sm font-semibold text-white/50 uppercase tracking-widest mb-4">Pro</h3>
+                <h3 className="text-xs font-semibold text-[#0d0d0d]/40 uppercase tracking-widest mb-4">Pro</h3>
                 <div className="flex items-end gap-2 mb-3">
-                  <span className="text-6xl font-bold text-white tracking-tight leading-none">$87</span>
-                  <span className="text-white/40 text-sm mb-1.5">/mo</span>
+                  <span className="text-6xl font-bold text-[#0d0d0d] tracking-tight leading-none">$87</span>
+                  <span className="text-[#0d0d0d]/40 text-sm mb-1.5">/mo</span>
                 </div>
-                <p className="text-sm text-white/45">Core plus full GoHighLevel sync for operators ready to scale.</p>
+                <p className="text-sm text-[#0d0d0d]/50">Core plus full GoHighLevel sync for operators ready to scale.</p>
               </div>
 
-              <a href="#" className="block w-full rounded-xl bg-[#22c55e] hover:bg-[#4ade80] transition-colors duration-150 px-5 py-3.5 text-sm font-semibold text-black text-center mb-8">
+              <a href="#" className="block w-full rounded-xl bg-[#22c55e] hover:bg-[#16a34a] transition-colors duration-150 px-5 py-3.5 text-sm font-semibold text-black text-center mb-8">
                 Start Free Trial
               </a>
 
               <ul className="space-y-3">
                 {proFeatures.map((f, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-white/60">
-                    <span className="text-[#22c55e] mt-0.5"><IconCheck /></span>
+                  <li key={i} className="flex items-start gap-3 text-sm text-[#0d0d0d]/65">
+                    <span className="text-[#22c55e]"><IconCheck /></span>
                     {f}
                   </li>
                 ))}
@@ -399,56 +382,50 @@ export default function Home() {
       </section>
 
       {/* ── Divider ── */}
-      <div className="max-w-6xl mx-auto px-5 sm:px-8">
-        <div className="h-px bg-white/[0.06]" />
-      </div>
+      <div className="max-w-6xl mx-auto px-5 sm:px-8"><div className="h-px bg-black/[0.08]" /></div>
 
       {/* ── How It Works ── */}
       <section id="how-it-works" className="py-24 px-5 sm:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="mb-16">
             <p className="text-xs font-semibold text-[#22c55e] mb-4 tracking-[0.2em] uppercase">How It Works</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
+            <h2 className="text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight">
               Up and running<br />in minutes.
             </h2>
           </div>
 
-          <div className="space-y-px bg-white/[0.06] rounded-2xl overflow-hidden">
+          <div className="space-y-px bg-black/[0.08] rounded-2xl overflow-hidden">
             {steps.map((step, i) => (
-              <div key={i} className="flex gap-6 sm:gap-10 bg-[#050507] hover:bg-[#0d0d12] transition-colors duration-200 p-8">
+              <div key={i} className="flex gap-6 sm:gap-10 bg-[#f7f5f0] hover:bg-white transition-colors duration-200 p-8">
                 <div className="flex-shrink-0 pt-1">
-                  <span className="text-4xl font-bold text-white/10 font-mono leading-none">{step.number}</span>
+                  <span className="text-4xl font-bold text-black/10 font-mono leading-none">{step.number}</span>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-2">{step.title}</h3>
-                  <p className="text-sm text-white/45 leading-relaxed">{step.description}</p>
+                  <h3 className="text-lg font-semibold text-[#0d0d0d] mb-2">{step.title}</h3>
+                  <p className="text-sm text-[#0d0d0d]/50 leading-relaxed">{step.description}</p>
                 </div>
               </div>
             ))}
           </div>
 
           <div className="mt-14 flex flex-col sm:flex-row items-center gap-4">
-            <a href="#pricing" className="w-full sm:w-auto rounded-xl bg-[#22c55e] hover:bg-[#4ade80] transition-colors duration-150 px-8 py-4 text-base font-semibold text-black text-center">
+            <a href="#pricing" className="w-full sm:w-auto rounded-xl bg-[#22c55e] hover:bg-[#16a34a] transition-colors duration-150 px-8 py-4 text-base font-semibold text-black text-center">
               Start Free Trial
             </a>
-            <p className="text-sm text-white/30">No credit card required. 7 days free.</p>
+            <p className="text-sm text-[#0d0d0d]/35">No credit card required. 7 days free.</p>
           </div>
         </div>
       </section>
 
       {/* ── Footer ── */}
-      <div className="max-w-6xl mx-auto px-5 sm:px-8">
-        <div className="h-px bg-white/[0.06]" />
-      </div>
+      <div className="max-w-6xl mx-auto px-5 sm:px-8"><div className="h-px bg-black/[0.08]" /></div>
       <footer className="py-10 px-5 sm:px-8">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span className="text-sm font-bold tracking-[0.2em] text-white uppercase">Smintos</span>
-          <p className="text-xs text-white/25">
-            &copy; {new Date().getFullYear()} Smintos. All rights reserved.
-          </p>
+          <span className="text-sm font-bold tracking-[0.2em] text-[#0d0d0d] uppercase">Smintos</span>
+          <p className="text-xs text-[#0d0d0d]/30">&copy; {new Date().getFullYear()} Smintos. All rights reserved.</p>
           <div className="flex items-center gap-5">
-            <Link href="/terms" className="text-xs text-white/30 hover:text-white/60 transition-colors duration-150">Terms</Link>
-            <Link href="/privacy" className="text-xs text-white/30 hover:text-white/60 transition-colors duration-150">Privacy</Link>
+            <Link href="/terms" className="text-xs text-[#0d0d0d]/35 hover:text-[#0d0d0d]/70 transition-colors duration-150">Terms</Link>
+            <Link href="/privacy" className="text-xs text-[#0d0d0d]/35 hover:text-[#0d0d0d]/70 transition-colors duration-150">Privacy</Link>
           </div>
         </div>
       </footer>
