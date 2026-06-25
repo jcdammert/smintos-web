@@ -104,6 +104,22 @@ const steps = [
   { number: '03', title: 'Run from anywhere. Connect to GHL when ready.', description: 'Smintos works on its own from day one. Plug into GoHighLevel whenever you want to level up.' },
 ]
 
+/* ─── Coin ─── */
+function Coin({ size = 80 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* 3D coin edge */}
+      <circle cx="50" cy="56" r="44" fill="#009958" />
+      {/* Coin face */}
+      <circle cx="50" cy="50" r="44" fill={MINT} />
+      {/* Rim */}
+      <circle cx="50" cy="50" r="37" fill="none" stroke="rgba(0,0,0,0.12)" strokeWidth="2" />
+      {/* Letter S */}
+      <text x="50" y="70" textAnchor="middle" fontFamily="Arial Black, Arial, sans-serif" fontWeight="900" fontSize="54" fill="rgba(0,0,0,0.72)">S</text>
+    </svg>
+  )
+}
+
 /* ─── Hero Visual ─── */
 function HeroVisual() {
   const metrics = [
@@ -195,8 +211,25 @@ export default function Home() {
       </nav>
 
       {/* ── Hero ── */}
-      <section className="px-5 sm:px-8 pt-14 pb-10 lg:pt-16 lg:pb-14">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative px-5 sm:px-8 pt-14 pb-10 lg:pt-16 lg:pb-14 overflow-hidden">
+
+        {/* Floating S coins */}
+        <div className="pointer-events-none select-none absolute inset-0">
+          <div className="absolute -top-8 -left-10 animate-float" style={{ transform: 'rotate(-18deg)' }}>
+            <Coin size={120} />
+          </div>
+          <div className="absolute -top-4 -right-8 animate-float-delay" style={{ transform: 'rotate(14deg)' }}>
+            <Coin size={90} />
+          </div>
+          <div className="absolute -bottom-8 -left-6 animate-float-delay" style={{ transform: 'rotate(10deg)' }}>
+            <Coin size={80} />
+          </div>
+          <div className="absolute -bottom-10 -right-4 animate-float" style={{ transform: 'rotate(-22deg)' }}>
+            <Coin size={110} />
+          </div>
+        </div>
+
+        <div className="relative z-10 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left */}
             <div>
