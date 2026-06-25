@@ -195,9 +195,9 @@ export default function Home() {
       </nav>
 
       {/* ── Hero ── */}
-      <section className="px-5 sm:px-8 pt-20 pb-16 lg:pt-24 lg:pb-20">
+      <section className="px-5 sm:px-8 pt-14 pb-10 lg:pt-16 lg:pb-14">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left */}
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-black/[0.09] bg-white px-4 py-1.5 text-xs font-semibold text-[#0d0d0d]/60 mb-8">
@@ -264,7 +264,7 @@ export default function Home() {
 
       {/* ── Stats strip ── */}
       <div className="border-b border-black/[0.07] bg-[#f7f5f0]">
-        <div className="max-w-6xl mx-auto px-5 sm:px-8 py-10 grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0 sm:divide-x divide-black/[0.07]">
+        <div className="max-w-6xl mx-auto px-5 sm:px-8 py-7 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0 sm:divide-x divide-black/[0.07]">
           {[
             { value: '$57', label: 'Starting at per month' },
             { value: '1 file', label: 'No complex setup needed' },
@@ -279,9 +279,9 @@ export default function Home() {
       </div>
 
       {/* ── Problems ── */}
-      <section className="py-24 px-5 sm:px-8">
+      <section className="py-16 px-5 sm:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             <div className="lg:sticky lg:top-28">
               <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ color: MINT }}>Sound Familiar?</p>
               <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight mb-6">
@@ -293,7 +293,7 @@ export default function Home() {
             </div>
             <div className="space-y-4">
               {problems.map((problem, i) => (
-                <div key={i} className="group bg-white rounded-2xl border border-black/[0.07] p-7 hover:border-black/[0.15] transition-all duration-200 hover:shadow-sm">
+                <div key={i} className="group bg-white rounded-2xl border border-black/[0.07] p-5 hover:border-black/[0.15] transition-all duration-200 hover:shadow-sm">
                   <div className="flex items-start gap-5">
                     <span className="text-4xl font-bold text-black/08 font-mono leading-none flex-shrink-0 pt-1">{String(i + 1).padStart(2, '0')}</span>
                     <div>
@@ -309,9 +309,9 @@ export default function Home() {
       </section>
 
       {/* ── Features ── */}
-      <section id="features" className="py-24 px-5 sm:px-8 bg-[#f7f5f0]">
+      <section id="features" className="py-16 px-5 sm:px-8 bg-[#f7f5f0]">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
             <div>
               <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ color: MINT }}>Features</p>
               <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight">
@@ -326,9 +326,9 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
             {/* 1 — Job Scheduling, bullet list */}
-            <div className="bg-white rounded-3xl p-9 border border-black/[0.06] flex flex-col gap-8">
+            <div className="bg-white rounded-3xl p-6 border border-black/[0.06] flex flex-col gap-5">
               <div>
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-6" style={{ background: `${MINT}20`, color: MINT }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: `${MINT}20`, color: MINT }}>
                   <IconCalendar />
                 </div>
                 <h3 className="font-display text-2xl font-bold text-[#0d0d0d] mb-3">Job Scheduling & Dispatching</h3>
@@ -347,9 +347,9 @@ export default function Home() {
             </div>
 
             {/* 2 — Estimates, mini invoice mockup */}
-            <div className="bg-white rounded-3xl p-9 border border-black/[0.06] flex flex-col gap-8">
+            <div className="bg-white rounded-3xl p-6 border border-black/[0.06] flex flex-col gap-5">
               <div>
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-6" style={{ background: `${MINT}20`, color: MINT }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: `${MINT}20`, color: MINT }}>
                   <IconDocument />
                 </div>
                 <h3 className="font-display text-2xl font-bold text-[#0d0d0d] mb-3">Estimates & Invoicing</h3>
@@ -371,9 +371,9 @@ export default function Home() {
             </div>
 
             {/* 3 — Payment Collection, light stat tiles */}
-            <div className="bg-white rounded-3xl p-9 border border-black/[0.06] flex flex-col gap-8">
+            <div className="bg-white rounded-3xl p-6 border border-black/[0.06] flex flex-col gap-5">
               <div>
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-6" style={{ background: `${MINT}20`, color: MINT }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: `${MINT}20`, color: MINT }}>
                   <IconCreditCard />
                 </div>
                 <h3 className="font-display text-2xl font-bold text-[#0d0d0d] mb-3">Payment Collection</h3>
@@ -394,9 +394,9 @@ export default function Home() {
             </div>
 
             {/* 4 — Customer Management, bullet list */}
-            <div className="bg-white rounded-3xl p-9 border border-black/[0.06] flex flex-col gap-8">
+            <div className="bg-white rounded-3xl p-6 border border-black/[0.06] flex flex-col gap-5">
               <div>
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-6" style={{ background: `${MINT}20`, color: MINT }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: `${MINT}20`, color: MINT }}>
                   <IconUsers />
                 </div>
                 <h3 className="font-display text-2xl font-bold text-[#0d0d0d] mb-3">Customer Management</h3>
@@ -415,9 +415,9 @@ export default function Home() {
             </div>
 
             {/* 5 — Job Notes & Photos, photo grid */}
-            <div className="bg-white rounded-3xl p-9 border border-black/[0.06] flex flex-col gap-8">
+            <div className="bg-white rounded-3xl p-6 border border-black/[0.06] flex flex-col gap-5">
               <div>
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-6" style={{ background: `${MINT}20`, color: MINT }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: `${MINT}20`, color: MINT }}>
                   <IconCamera />
                 </div>
                 <h3 className="font-display text-2xl font-bold text-[#0d0d0d] mb-3">Job Notes & Photo Uploads</h3>
@@ -435,9 +435,9 @@ export default function Home() {
             </div>
 
             {/* 6 — Mobile First, platform tags */}
-            <div className="bg-white rounded-3xl p-9 border border-black/[0.06] flex flex-col gap-8">
+            <div className="bg-white rounded-3xl p-6 border border-black/[0.06] flex flex-col gap-5">
               <div>
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-6" style={{ background: `${MINT}20`, color: MINT }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: `${MINT}20`, color: MINT }}>
                   <IconPhone />
                 </div>
                 <h3 className="font-display text-2xl font-bold text-[#0d0d0d] mb-3">Mobile First Design</h3>
@@ -457,9 +457,9 @@ export default function Home() {
       </section>
 
       {/* ── Pricing ── */}
-      <section id="pricing" className="py-24 px-5 sm:px-8 bg-[#f7f5f0]">
+      <section id="pricing" className="py-16 px-5 sm:px-8 bg-[#f7f5f0]">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-14">
+          <div className="text-center mb-8">
             <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ color: MINT }}>Pricing</p>
             <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight">
               Simple, flat pricing.
@@ -469,14 +469,14 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {/* Core */}
-            <div className="rounded-2xl border border-black/[0.09] bg-white p-8">
+            <div className="rounded-2xl border border-black/[0.09] bg-white p-6">
               <h3 className="text-xs font-bold text-[#0d0d0d]/35 uppercase tracking-widest mb-5">Core</h3>
               <div className="flex items-end gap-1.5 mb-2">
                 <span className="text-6xl font-bold text-[#0d0d0d] tracking-tight leading-none">$57</span>
                 <span className="text-[#0d0d0d]/35 text-sm mb-2">/mo</span>
               </div>
-              <p className="text-sm text-[#0d0d0d]/45 mb-8">Everything to run your field ops. No GHL required.</p>
-              <a href="#" className="block w-full rounded-xl border-2 border-black/10 hover:border-black/25 hover:bg-black/[0.03] transition-all duration-150 px-5 py-3.5 text-sm font-bold text-[#0d0d0d] text-center mb-8">
+              <p className="text-sm text-[#0d0d0d]/45 mb-5">Everything to run your field ops. No GHL required.</p>
+              <a href="#" className="block w-full rounded-xl border-2 border-black/10 hover:border-black/25 hover:bg-black/[0.03] transition-all duration-150 px-5 py-3.5 text-sm font-bold text-[#0d0d0d] text-center mb-5">
                 Start Free Trial
               </a>
               <ul className="space-y-3">
@@ -489,7 +489,7 @@ export default function Home() {
             </div>
 
             {/* Pro */}
-            <div className="relative rounded-2xl border-2 bg-white p-8 shadow-[0_0_60px_rgba(0,217,126,0.1)]" style={{ borderColor: MINT }}>
+            <div className="relative rounded-2xl border-2 bg-white p-6 shadow-[0_0_60px_rgba(0,217,126,0.1)]" style={{ borderColor: MINT }}>
               <div className="absolute -top-4 left-6">
                 <span className="inline-block rounded-full text-black text-[11px] font-bold px-4 py-1.5 tracking-wide shadow-sm" style={{ background: MINT }}>
                   Most Popular
@@ -500,8 +500,8 @@ export default function Home() {
                 <span className="text-6xl font-bold text-[#0d0d0d] tracking-tight leading-none">$87</span>
                 <span className="text-[#0d0d0d]/35 text-sm mb-2">/mo</span>
               </div>
-              <p className="text-sm text-[#0d0d0d]/45 mb-8">Core plus full GoHighLevel sync for operators ready to scale.</p>
-              <a href="#" className="block w-full rounded-xl px-5 py-3.5 text-sm font-bold text-black text-center mb-8 transition-opacity hover:opacity-80" style={{ background: MINT }}>
+              <p className="text-sm text-[#0d0d0d]/45 mb-5">Core plus full GoHighLevel sync for operators ready to scale.</p>
+              <a href="#" className="block w-full rounded-xl px-5 py-3.5 text-sm font-bold text-black text-center mb-5 transition-opacity hover:opacity-80" style={{ background: MINT }}>
                 Start Free Trial
               </a>
               <ul className="space-y-3">
@@ -517,9 +517,9 @@ export default function Home() {
       </section>
 
       {/* ── How It Works ── */}
-      <section id="how-it-works" className="py-24 px-5 sm:px-8 bg-white">
+      <section id="how-it-works" className="py-16 px-5 sm:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             <div className="lg:sticky lg:top-28">
               <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ color: MINT }}>How It Works</p>
               <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight mb-6">
@@ -535,7 +535,7 @@ export default function Home() {
 
             <div className="space-y-4">
               {steps.map((step, i) => (
-                <div key={i} className="flex gap-6 rounded-2xl border border-black/[0.07] bg-[#f7f5f0] hover:bg-[#f0ede7] transition-colors duration-200 p-7">
+                <div key={i} className="flex gap-6 rounded-2xl border border-black/[0.07] bg-[#f7f5f0] hover:bg-[#f0ede7] transition-colors duration-200 p-5">
                   <span className="text-5xl font-bold text-black/[0.07] font-mono leading-none flex-shrink-0 pt-1">{step.number}</span>
                   <div>
                     <h3 className="text-lg font-semibold text-[#0d0d0d] mb-2">{step.title}</h3>
@@ -551,7 +551,7 @@ export default function Home() {
       {/* ── CTA Block ── */}
       <section className="px-5 sm:px-8 py-6 bg-[#f7f5f0]">
         <div className="max-w-6xl mx-auto">
-          <div className="rounded-3xl px-10 py-16 text-center" style={{ background: MINT }}>
+          <div className="rounded-3xl px-8 py-12 text-center" style={{ background: MINT }}>
             <p className="text-xs font-bold tracking-[0.2em] uppercase text-black/40 mb-4">Get Started Today</p>
             <h2 className="font-display text-4xl sm:text-5xl font-bold text-black leading-tight mb-4">
               Run a tighter operation.<br />Starting now.
