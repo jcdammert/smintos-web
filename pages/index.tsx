@@ -107,9 +107,9 @@ const steps = [
 /* ─── Hero Visual ─── */
 function HeroVisual() {
   const metrics = [
-    { label: 'Jobs scheduled this week', value: '14', sub: '3 pending · 11 confirmed', dark: false },
-    { label: 'Revenue collected', value: '$6,840', sub: 'This month', dark: true },
-    { label: 'Estimates awaiting approval', value: '5', sub: 'Avg. response: 4 hrs', dark: false },
+    { label: 'Jobs scheduled this week', value: '14', sub: '3 pending · 11 confirmed' },
+    { label: 'Revenue collected', value: '$6,840', sub: 'This month' },
+    { label: 'Estimates awaiting approval', value: '5', sub: 'Avg. response: 4 hrs' },
   ]
 
   return (
@@ -117,26 +117,26 @@ function HeroVisual() {
       {metrics.map((m, i) => (
         <div
           key={i}
-          className={`rounded-2xl border p-6 shadow-[0_8px_40px_rgba(0,0,0,0.07)] ${
+          className={`rounded-2xl bg-white border border-black/[0.07] p-5 shadow-[0_8px_40px_rgba(0,0,0,0.06)] ${
             i === 1 ? 'ml-8 animate-float-delay' : 'animate-float'
-          } ${m.dark ? 'bg-[#0d0d0d] border-white/[0.07]' : 'bg-white border-black/[0.07]'}`}
+          }`}
         >
-          <p className={`text-[10px] font-bold tracking-widest uppercase mb-3 ${m.dark ? 'text-white/35' : 'text-black/35'}`}>
+          <p className="text-[10px] font-bold tracking-widest uppercase mb-3 text-black/30">
             {m.label}
           </p>
           <div className="flex items-end justify-between gap-4">
-            <p className={`text-3xl font-bold leading-none ${m.dark ? 'text-white' : 'text-[#0d0d0d]'}`}
+            <p className="text-3xl font-bold leading-none text-[#0d0d0d]"
                style={i === 1 ? { color: MINT } : {}}>
               {m.value}
             </p>
             <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
-                 style={{ background: `${MINT}${m.dark ? 'ff' : '22'}` }}>
-              <svg className="w-4 h-4" style={{ color: m.dark ? '#000' : MINT }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                 style={{ background: `${MINT}20` }}>
+              <svg className="w-4 h-4" style={{ color: MINT }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
               </svg>
             </div>
           </div>
-          <p className={`text-xs mt-2 ${m.dark ? 'text-white/35' : 'text-black/35'}`}>{m.sub}</p>
+          <p className="text-xs mt-2 text-black/30">{m.sub}</p>
         </div>
       ))}
       <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full opacity-15 blur-3xl" style={{ background: MINT }} />
@@ -205,10 +205,10 @@ export default function Home() {
                 Built for operators, not project managers
               </div>
 
-              <h1 className="font-display text-[clamp(2.6rem,6vw,4.5rem)] font-bold leading-[1.05] tracking-tight text-[#0d0d0d] mb-6">
+              <h1 className="font-display text-[clamp(2.4rem,5vw,3.75rem)] font-bold leading-[1.05] tracking-tight text-[#0d0d0d] mb-6">
                 Made simple<br />
-                so you can{' '}
-                <span style={{ color: MINT }}>make&nbsp;more&nbsp;money.</span>
+                so you can<br />
+                <span style={{ color: MINT }}>make more money.</span>
               </h1>
 
               <p className="text-lg text-[#0d0d0d]/55 max-w-lg mb-8 leading-relaxed">
