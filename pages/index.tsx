@@ -213,21 +213,6 @@ export default function Home() {
       {/* ── Hero ── */}
       <section className="relative px-5 sm:px-8 pt-14 pb-10 lg:pt-16 lg:pb-14 overflow-hidden">
 
-        {/* Floating S coins */}
-        <div className="pointer-events-none select-none absolute inset-0">
-          <div className="absolute top-6 left-2 animate-float" style={{ transform: 'rotate(-32deg)' }}>
-            <Coin size={88} />
-          </div>
-          <div className="absolute bottom-10 left-14 animate-float-delay" style={{ transform: 'rotate(18deg)' }}>
-            <Coin size={62} />
-          </div>
-          <div className="absolute top-10 right-6 animate-float-delay" style={{ transform: 'rotate(26deg)' }}>
-            <Coin size={74} />
-          </div>
-          <div className="absolute bottom-6 right-0 animate-float" style={{ transform: 'rotate(-20deg)' }}>
-            <Coin size={80} />
-          </div>
-        </div>
 
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
