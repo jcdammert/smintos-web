@@ -277,32 +277,69 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ── Problems ── */}
-      <section className="py-16 px-5 sm:px-8">
+      {/* ── Before / After ── */}
+      <section className="py-16 px-5 sm:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-            <div className="lg:sticky lg:top-28">
-              <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ color: MINT }}>Sound Familiar?</p>
-              <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight mb-6">
-                The pain is real.<br />We built<br />around it.
-              </h2>
-              <p className="text-[#0d0d0d]/50 leading-relaxed">
-                Every feature in Smintos exists because a real operator — just like you — told us exactly what was breaking in their day.
-              </p>
+          <div className="mb-10">
+            <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ color: MINT }}>Sound Familiar?</p>
+            <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight">
+              This is how most operators<br />run their business right now.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+            {/* Statement */}
+            <div className="rounded-3xl bg-[#f7f5f0] border border-black/[0.06] p-8 flex items-end min-h-[200px]">
+              <h3 className="font-display text-3xl sm:text-4xl font-bold text-[#0d0d0d] leading-tight">
+                Chasing payments<br />after the job.<br />
+                <span className="text-[#0d0d0d]/20">That&apos;s exhausting.</span>
+              </h3>
             </div>
-            <div className="space-y-4">
-              {problems.map((problem, i) => (
-                <div key={i} className="group bg-white rounded-2xl border border-black/[0.07] p-5 hover:border-black/[0.15] transition-all duration-200 hover:shadow-sm">
-                  <div className="flex items-start gap-5">
-                    <span className="text-4xl font-bold text-black/08 font-mono leading-none flex-shrink-0 pt-1">{String(i + 1).padStart(2, '0')}</span>
-                    <div>
-                      <h3 className="text-lg font-semibold text-[#0d0d0d] mb-2">{problem.title}</h3>
-                      <p className="text-sm text-[#0d0d0d]/50 leading-relaxed">{problem.description}</p>
-                    </div>
-                  </div>
+
+            {/* Chat bubble chaos */}
+            <div className="rounded-3xl bg-white border border-black/[0.06] p-6 overflow-hidden">
+              <p className="text-[10px] font-bold text-[#0d0d0d]/30 uppercase tracking-widest mb-4">Your payment thread 💀</p>
+              <div className="space-y-2.5">
+                <div className="flex justify-end">
+                  <div className="bg-[#0d0d0d] text-white text-sm px-4 py-2.5 rounded-2xl rounded-tr-sm max-w-[80%]">hey, can you pay invoice #42?</div>
                 </div>
-              ))}
+                <div className="flex">
+                  <div className="bg-[#f0f0f0] text-[#0d0d0d] text-sm px-4 py-2.5 rounded-2xl rounded-tl-sm max-w-[80%]">oh yeah sorry!! i&apos;ll do it tonight 👍</div>
+                </div>
+                <div className="flex justify-end">
+                  <div className="bg-[#0d0d0d] text-white text-sm px-4 py-2.5 rounded-2xl rounded-tr-sm max-w-[80%]">hey just following up… it&apos;s been 2 weeks 😅</div>
+                </div>
+                <div className="flex">
+                  <div className="bg-[#f0f0f0] text-[#0d0d0d] text-sm px-4 py-2.5 rounded-2xl rounded-tl-sm max-w-[80%]">can u just venmo me lol</div>
+                </div>
+                <div className="flex justify-end">
+                  <div className="bg-[#0d0d0d] text-white text-sm px-4 py-2.5 rounded-2xl rounded-tr-sm max-w-[80%]">…what&apos;s your venmo again?</div>
+                </div>
+              </div>
             </div>
+
+            {/* Payment confirmed */}
+            <div className="rounded-3xl p-6 overflow-hidden" style={{ background: MINT }}>
+              <p className="text-[10px] font-bold text-black/40 uppercase tracking-widest mb-4">With Smintos</p>
+              <div className="bg-white rounded-2xl p-5 shadow-sm mb-3">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[10px] font-bold text-[#0d0d0d]/35 uppercase tracking-widest">Invoice #42</span>
+                  <span className="text-[11px] font-bold px-3 py-1 rounded-full text-black bg-black/10">✓ Paid</span>
+                </div>
+                <p className="text-4xl font-bold text-[#0d0d0d] mb-1">$840.00</p>
+                <p className="text-sm text-[#0d0d0d]/40">Paid on-site · Card · 2 min ago</p>
+              </div>
+              <p className="text-sm font-semibold text-black/60">Payment collected before you left the driveway.</p>
+            </div>
+
+            {/* Statement */}
+            <div className="rounded-3xl bg-[#f7f5f0] border border-black/[0.06] p-8 flex items-end min-h-[200px]">
+              <h3 className="font-display text-3xl sm:text-4xl font-bold text-[#0d0d0d] leading-tight">
+                Collect on the spot.<br />Every. Single. Time.
+              </h3>
+            </div>
+
           </div>
         </div>
       </section>
@@ -516,33 +553,72 @@ export default function Home() {
       </section>
 
       {/* ── How It Works ── */}
-      <section id="how-it-works" className="py-16 px-5 sm:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-            <div className="lg:sticky lg:top-28">
-              <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ color: MINT }}>How It Works</p>
-              <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight mb-6">
-                Up and running<br />in minutes.
-              </h2>
-              <p className="text-[#0d0d0d]/50 leading-relaxed mb-8">
-                No implementation calls. No training sessions. If you&apos;ve ever used a phone, you can use Smintos.
-              </p>
-              <a href="#pricing" className="inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold text-black transition-opacity hover:opacity-80" style={{ background: MINT }}>
-                Start Free Trial <IconArrow />
-              </a>
+      <section id="how-it-works" className="py-16 px-5 sm:px-8 bg-[#f7f5f0]">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ color: MINT }}>How It Works</p>
+            <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-tight">
+              Up and running in minutes.
+            </h2>
+          </div>
+
+          {/* Oval loop diagram */}
+          <div className="relative rounded-[5rem] border-2 mx-auto max-w-2xl mb-14 overflow-hidden" style={{ borderColor: MINT, background: `${MINT}12` }}>
+            {/* Top row */}
+            <div className="flex items-center justify-between px-12 pt-10 pb-6">
+              <div className="text-center">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-black mb-2 mx-auto" style={{ background: MINT }}>1</div>
+                <p className="font-bold text-sm text-[#0d0d0d]">Schedule Job</p>
+              </div>
+              <div className="flex-1 flex items-center px-4 pb-4">
+                <div className="flex-1 border-t-2 border-dashed border-black/10" />
+                <svg className="w-4 h-4 text-[#0d0d0d]/25 -mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </div>
+              <div className="text-center">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-black mb-2 mx-auto" style={{ background: MINT }}>2</div>
+                <p className="font-bold text-sm text-[#0d0d0d]">Dispatch Crew</p>
+              </div>
             </div>
 
-            <div className="space-y-4">
-              {steps.map((step, i) => (
-                <div key={i} className="flex gap-6 rounded-2xl border border-black/[0.07] bg-[#f7f5f0] hover:bg-[#f0ede7] transition-colors duration-200 p-5">
-                  <span className="text-5xl font-bold text-black/[0.07] font-mono leading-none flex-shrink-0 pt-1">{step.number}</span>
-                  <div>
-                    <h3 className="text-lg font-semibold text-[#0d0d0d] mb-2">{step.title}</h3>
-                    <p className="text-sm text-[#0d0d0d]/50 leading-relaxed">{step.description}</p>
-                  </div>
-                </div>
-              ))}
+            {/* Center */}
+            <div className="text-center py-3">
+              <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0d0d0d]/20">The Smintos Cycle</span>
             </div>
+
+            {/* Bottom row */}
+            <div className="flex items-center justify-between px-12 pt-6 pb-10">
+              <div className="text-center">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-black mb-2 mx-auto" style={{ background: MINT }}>4</div>
+                <p className="font-bold text-sm text-[#0d0d0d]">Get Paid</p>
+              </div>
+              <div className="flex-1 flex items-center px-4 pb-4">
+                <svg className="w-4 h-4 text-[#0d0d0d]/25 -ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                <div className="flex-1 border-t-2 border-dashed border-black/10" />
+              </div>
+              <div className="text-center">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-black mb-2 mx-auto" style={{ background: MINT }}>3</div>
+                <p className="font-bold text-sm text-[#0d0d0d]">Send Invoice</p>
+              </div>
+            </div>
+          </div>
+
+          {/* 3 steps below */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+            {steps.map((step, i) => (
+              <div key={i} className="bg-white rounded-2xl border border-black/[0.06] p-5">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-black mb-4" style={{ background: MINT }}>
+                  {step.number}
+                </div>
+                <h3 className="font-semibold text-[#0d0d0d] mb-2 text-sm leading-snug">{step.title}</h3>
+                <p className="text-xs text-[#0d0d0d]/45 leading-relaxed">{step.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <a href="#pricing" className="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-base font-bold text-black transition-opacity hover:opacity-80" style={{ background: MINT }}>
+              Start Free Trial <IconArrow />
+            </a>
           </div>
         </div>
       </section>
