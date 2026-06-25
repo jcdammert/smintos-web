@@ -206,14 +206,13 @@ export default function Home() {
               </div>
 
               <h1 className="font-display text-[clamp(2.6rem,6vw,4.5rem)] font-bold leading-[1.05] tracking-tight text-[#0d0d0d] mb-6">
-                Stop Running<br />
-                Your Business<br />
-                From a{' '}
-                <span style={{ color: MINT }}>Text&nbsp;Thread.</span>
+                Made simple<br />
+                so you can{' '}
+                <span style={{ color: MINT }}>make&nbsp;more&nbsp;money.</span>
               </h1>
 
               <p className="text-lg text-[#0d0d0d]/55 max-w-lg mb-8 leading-relaxed">
-                Simple field service software for home service operators. Schedule jobs, send estimates, collect payments — from one place. Works standalone. Connects to GoHighLevel when you&apos;re ready.
+                Schedule jobs, send estimates, collect payments — all from your phone. No complicated setup. No bloated software. Just the tools you need to run your field ops and get paid.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 mb-10">
