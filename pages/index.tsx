@@ -215,17 +215,17 @@ export default function Home() {
 
         {/* Floating S coins */}
         <div className="pointer-events-none select-none absolute inset-0">
-          <div className="absolute -top-8 -left-10 animate-float" style={{ transform: 'rotate(-18deg)' }}>
-            <Coin size={120} />
+          <div className="absolute top-6 left-2 animate-float" style={{ transform: 'rotate(-32deg)' }}>
+            <Coin size={88} />
           </div>
-          <div className="absolute -top-4 -right-8 animate-float-delay" style={{ transform: 'rotate(14deg)' }}>
-            <Coin size={90} />
+          <div className="absolute bottom-10 left-14 animate-float-delay" style={{ transform: 'rotate(18deg)' }}>
+            <Coin size={62} />
           </div>
-          <div className="absolute -bottom-8 -left-6 animate-float-delay" style={{ transform: 'rotate(10deg)' }}>
+          <div className="absolute top-10 right-6 animate-float-delay" style={{ transform: 'rotate(26deg)' }}>
+            <Coin size={74} />
+          </div>
+          <div className="absolute bottom-6 right-0 animate-float" style={{ transform: 'rotate(-20deg)' }}>
             <Coin size={80} />
-          </div>
-          <div className="absolute -bottom-10 -right-4 animate-float" style={{ transform: 'rotate(-22deg)' }}>
-            <Coin size={110} />
           </div>
         </div>
 
